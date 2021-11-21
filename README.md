@@ -7,3 +7,9 @@ Tamagotchi Game Project, Unit 1
 ![Screen Shot 2021-11-20 at 4 24 50 PM](https://user-images.githubusercontent.com/45264141/142744736-00552c1d-921b-4d2b-8d9d-2ca7545edd8f.png)
 ![Screen Shot 2021-11-20 at 4 26 32 PM](https://user-images.githubusercontent.com/45264141/142744758-6fb07480-3559-424e-b645-aa2b396fb9cc.png)
 ![Screen Shot 2021-11-20 at 4 28 11 PM](https://user-images.githubusercontent.com/45264141/142744778-4d2b6d17-3902-4b4f-b286-bf91984b3389.png)
+
+
+USER STORIES TO FLESH OUT THE ABOVE WIREFRAMES BETTER: 
+GOAL IS TO HAVE AN MVP AND IN RED ARE THE NICE TO HAVES.
+
+![image](https://user-images.githubusercontent.com/45264141/142744855-3c58ddc6-3a24-4b81-9cc0-007684c4e284.png)
