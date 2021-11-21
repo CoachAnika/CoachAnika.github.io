@@ -1,5 +1,5 @@
 # CoachAnika.github.io
-Tamagotchi Game Project, Unit 1
+Tamagotchi Game 
 1) Game Start Page + Main Game Interface
 ![Screen Shot 2021-11-20 at 4 18 15 PM](https://user-images.githubusercontent.com/45264141/142744615-4ff3f1b8-2cba-4fe4-9cb7-c4032301b41d.png)
 ![Screen Shot 2021-11-20 at 5 01 06 PM](https://user-images.githubusercontent.com/45264141/142745320-2597160d-b52f-4b48-9fb5-078eb9b905d7.png)
