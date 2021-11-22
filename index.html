@@ -7,17 +7,76 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>My Tamagotchi</title>
+        <title>Tamagotchi</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS STYLE -->
         <link rel="stylesheet" href="css/style.css">
-        <script src="js/app.js" async defer></script>
+   <!-- Compiled and minified CSS for Materialize -->
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+   <!-- Compiled and minified JavaScript for Materialize -->
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
+          
+        <div class="container">
+            <header>
+            <!-- NAME & AGE HERE -->    
+           
+                <h2>HELLO NAME!</h2>
+                <h2>AGE:</h2>
+            
+            </header>
+        
+            <main>
+             <!-- PET GOES HERE -->   
+            </main>
+            
+            <aside>
+       <!-- INSTRUCTIONS-->
+        <div class= "instbox">
+        <h4>Game Instructions:</h4>
+                    <!-- <ol>
+                        <li>Play with your pet</li>
+                        <li>Feed your pet</li>
+                        <li>Put your pet to sleep</li>
+        
+                    </ol> -->
+        </div>
+
+         <!-- PUT PROGRESS SLIDERS -->
+         <!-- PLAY PROGRESS -->
+         <div class= "playProgress">
+            <div class="bar" id="playbar">BORED</div>
+        </div>
+        <!-- FEED PROGRESS -->
+         <div class= "feedProgress">
+             <div class="bar" id="feedbar">HUNGRY</div>
+        </div>   
+         <!-- SLEEP PROGRESS -->  
+         <div class= "sleepProgress">
+            <div class= "bar" id= "feedbar">SLEEPY</div>
+       </div>   
+      </aside>
+            
+            <footer>
+            <!-- PUT FEED, PLAY, SLEEP BUTTONS/ ICONS HERE -->
+            <!-- <img src="https://i.imgur.com/wgtuy1It.png " height="50%" width="20%" alt="play">     -->
+            <div id= "button-area">
+                <button id="feed"><img src="Images/Apple.jpeg" alt="feed"></button>
+                <button id="play"><img src="Images/Radio.jpeg" alt="play"></button>
+                <button id="sleep"><img src="Images/Pilllow.jpeg" alt="sleep"></button>
+            </div>
+            </footer>
+    </div>
      
+    <!-- JS SCRIPT -->    
+     <script src="js/app.js" async defer></script>
+
     </body>
 </html>
