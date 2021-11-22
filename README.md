@@ -1,6 +1,21 @@
 # CoachAnika.github.io
+
+DAY 1 SUNDAY: 
+a. Set up main Game Interface css grid to look like the wireframe. Created header, footer, main, aside elements to divide the page into sections. Brightly color coded these sections to see them clearly as I work in them. 
+b. Worked on aside element section first, to add game instructions and progress bars. I was having overflow issues, which I tackled with overflow hidden on the body element. However, still having text flow overflow issues on the text in the game instructions block in the aside element, still need to solve for that.
+c. Inserted animated progress bars under game instructions in aside element. It's an animated placeholder for now, much work still needed here. 
+d. Added buttons with images for feed, play, sleep in footer. Solving for image issues, will tackle in good-to-have.
+e. Added name and age elements to header, will have to work on logic to pre-populate name and age, when user lands on the page. 
+f. Apart from the Game Interface, I also set up Main landing page for game, which is different from Game Interface. I set it up as a seperate index.html. I will have to link the two pages with a redirect, as user hits play.
+g. Added pet image to Main, which I will need to change to an animated gif. I also added and styled play buttom and user input form for name.
+h. On Main page, I am calling on a prebuilt CSS library from materialize, so not having overflow issues, and other design elements look more slick.
+
+Next Steps: 
+Working on main element of Game Interface to bring in pet. 
+Starting with javascript to start building interactivity on the page -- first step link pet to feed, play, sleep buttons. 
+
 Tamagotchi Game 
-1) Game Start Page + Main Game Interface
+Game Start Page + Main Game Interface
 ![Screen Shot 2021-11-20 at 4 18 15 PM](https://user-images.githubusercontent.com/45264141/142744615-4ff3f1b8-2cba-4fe4-9cb7-c4032301b41d.png)
 ![Screen Shot 2021-11-20 at 5 01 06 PM](https://user-images.githubusercontent.com/45264141/142745320-2597160d-b52f-4b48-9fb5-078eb9b905d7.png)
 ![Screen Shot 2021-11-20 at 5 01 52 PM](https://user-images.githubusercontent.com/45264141/142745326-3e33f4c0-f0e9-4134-b3ba-63fe3909f326.png)

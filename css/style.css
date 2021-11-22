@@ -51,6 +51,12 @@ footer
 
 /* Instructions Box Design in Aside */
 
+h4 {
+  display: flex;
+  position: relative;
+
+}
+
 .instbox {
   display: flex;
   flex-direction: column;
@@ -153,7 +159,7 @@ footer
   -moz-appearance: none;
 } */
 
-/* button:hover,
+button:hover,
 button:focus {
   background: #0053ba;
 }
@@ -165,7 +171,7 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
-}  */
+} 
 
 
 /* Main Start-Up Screen  */
@@ -210,9 +216,9 @@ button:active {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} 
 
-form input {
+.form input {
     margin-bottom: 16px;
     outline: none;
 }
@@ -224,14 +230,14 @@ form input {
 
 .username-field {
     border: none;
-    border-bottom: 2px solid;
+    border-bottom: 20px solid;
     font-size: 32px;
     text-align: center;
     
 }
 
 .placeholder {
-    color: #0bb38f65;
+    color: greenyellow;
 }
 
 .start-btn {
@@ -247,5 +253,5 @@ form input {
 }
 
 .start-btn:hover {
-    background-color: transparent;
+    background-color: greenyellow;
 }
