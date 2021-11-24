@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tamagotchi</title>
+        <title>Tamagotchi</title>  
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS STYLE -->
@@ -16,15 +16,27 @@
    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
    <!-- Compiled and minified JavaScript for Materialize -->
    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    
-    </head>
+  
+  
+   <!-- JQuery Script-->
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+  integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+  crossorigin="anonymous"></script>   
+</head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-          
-        <div class="container">
+        <!-- Victor has a div class music here-->
+
+        <div>
+            <div class="container">
+
+        <!-- Victor has a div class partOne here for the introduction of the game.-->
+        <!-- Everything that is on the other html file is here -->
+        <!-- partTwo here, which is the main game play-->
             <header>
             <!-- NAME & AGE HERE -->    
            
@@ -35,6 +47,16 @@
         
             <main>
              <!-- PET GOES HERE -->   
+             <div class= "pet-area"> <!-- This is the same as div class astronaut-->
+                 <!-- Default Pet Image  -->
+                <div id="stand"><img src="Images/Hamster/hamster_standing.gif" alt="stand"></div>
+                <!-- Pet Image for Play -->
+                <div id="play"><img src="Images/Hamster/hamster_walking.gif" alt="play"></div>
+                <!-- Pet Image for Feed-->
+                <div id="eat"><img src="Images/Hamster/hamster_eating.gif" alt="eat"></div>
+                <!-- Pet Image for Sleep -->
+                <div id="sleep"><img src="Images/Hamster/hamster_sleeping.png" alt="sleep"></div> 
+             </div>
             </main>
             
             <aside>
@@ -52,31 +74,53 @@
          <!-- PUT PROGRESS SLIDERS -->
          <!-- PLAY PROGRESS -->
          <div class= "playProgress">
-            <div class="bar" id="playbar">BORED</div>
+             <div class="bar" id="playBar">BORED TIMER </div>
         </div>
         <!-- FEED PROGRESS -->
          <div class= "feedProgress">
-             <div class="bar" id="feedbar">HUNGRY</div>
+             <div class="bar" id="feedBar">HUNGRY TIMER</div>
         </div>   
          <!-- SLEEP PROGRESS -->  
          <div class= "sleepProgress">
-            <div class= "bar" id= "feedbar">SLEEPY</div>
-       </div>   
+            <div class= "bar" id= "sleepBar">SLEEPY TIMER</div>
+
+        <!-- RECORD GAME SCORE -->
+        </div>   
+       <div class="uiElements responsive">
+
+        <!-- Timer for Sleep --> <!-- FIXME: ADD ICONS HERE -->
+        <div class="sleepBox">
+        <span id="sleepTimer"> 0 </span> <!-- every 50seconds increases by 1. -->
+        
+    
+        <!-- Timer for Boredom --> <!-- FIXME: ADD ICONS HERE -->
+        <div class="boredomBox">
+        <span id="boredTimer"> 0</span> <!-- every 30 seconds increases by 1. -->
+        </div>
+    
+        <!-- Timer for Hunger --> <!-- FIXME: ADD ICONS HERE -->
+        <div class="foodBox">
+        <span id="foodTimer">0</span> <!-- every 50seconds increases by 1. -->
+       
+        </div>
+        
+    </div>
       </aside>
             
             <footer>
             <!-- PUT FEED, PLAY, SLEEP BUTTONS/ ICONS HERE -->
             <!-- <img src="https://i.imgur.com/wgtuy1It.png " height="50%" width="20%" alt="play">     -->
-            <div id= "button-area">
-                <button id="feed"><img src="Images/Apple.jpeg" alt="feed"></button>
-                <button id="play"><img src="Images/Radio.jpeg" alt="play"></button>
-                <button id="sleep"><img src="Images/Pilllow.jpeg" alt="sleep"></button>
+            <div class= "button-area">
+                <button id="feed-Btn"><img src="Images/Apple.jpeg" alt="feed"></button>
+                <button id="play-Btn"><img src="Images/Radio.jpeg" alt="play"></button>
+                <button id="sleep-Btn"><img src="Images/Pilllow.jpeg" alt="sleep"></button>
             </div>
             </footer>
     </div>
+</div>
      
-    <!-- JS SCRIPT -->    
-     <script src="js/app.js" async defer></script>
+    <!-- JS SCRIPT -->      
+    <script src="js/app.js" async defer></script>
 
     </body>
 </html>

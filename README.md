@@ -1,6 +1,18 @@
 # CoachAnika.github.io
+DAY 2:
+Got the pet on the page with it's eating, sleeping, dancing versions. Added event listeners for the buttons so that on clicking button Feed, eating pet shows up, on sleep, sleeping pet version shows up etc. Still have to clean this logic so that default pet shows all times.    
 
-DAY 1 SUNDAY: 
+I have been trying to make progress bars show up. I have them animated -- challenge is to tie them to a function. TBD.
+Will change scope to have logic in place and have numbers/ scores  show up on page instead of a progress bar.
+
+Next Steps:
+1. Set a timer to the game start when user has added name and hits play. 
+2. As user hits buttons for feed, sleep, play, timer should reset, giving more time for user to play and tama to grow.
+3. Rethink name and game in header. 
+4. Research how multiple pages can be coded on one html file and how that might work for the different pages/ parts of the game.
+
+
+DAY 1: 
 a. Set up main Game Interface css grid to look like the wireframe. Created header, footer, main, aside elements to divide the page into sections. Brightly color coded these sections to see them clearly as I work in them. 
 b. Worked on aside element section first, to add game instructions and progress bars. I was having overflow issues, which I tackled with overflow hidden on the body element. However, still having text flow overflow issues on the text in the game instructions block in the aside element, still need to solve for that.
 c. Inserted animated progress bars under game instructions in aside element. It's an animated placeholder for now, much work still needed here. 

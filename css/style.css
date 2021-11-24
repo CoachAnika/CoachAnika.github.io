@@ -32,7 +32,7 @@ header
 main
 {
   grid-area: main;
-  background-color: #2ecc71;
+  background-color: white; 
 }
 
 aside
@@ -48,8 +48,16 @@ footer
   background-color: #1abc9c;
 }
 
+/* Code for Pet Design in Main*/
+.pet-area {
+  display: flex;                  
+  flex-direction: row;   
+  align-items: center;
 
-/* Instructions Box Design in Aside */
+}
+
+
+/* Code for Box Design in Aside */
 
 h4 {
   display: flex;
@@ -73,15 +81,20 @@ h4 {
   outline-offset: 0.5rem;
 }
 
-/* Progress Bar Design in Aside */
+/* Code for Progress Bar Design in Aside */
 
-.playProgress {
+/* .playProgress, .feedProgress, .sleepProgress { */
+  
+  .bar {
   position: relative;
   height: 5%;
   background-color:#1abc9c;
   margin: 20px;
-  animation: progress-animation 10s forwards;
-}
+  animation: progress-animation 500s forwards;
+  border-radius: 7px;
+
+  }
+  
 
 @keyframes progress-animation {
   0% { width: 0%;}
@@ -89,7 +102,7 @@ h4 {
 
 }
 
-.feedProgress {
+/* .feedProgress {
   position: relative;
   height: 5%;
   background-color:#1abc9c;
@@ -116,11 +129,11 @@ h4 {
   0% { width: 0%;}
   100% { width: 100%;}
 
-}
+} */
 
-/* Button Design in Footer */
+/* Code for Button Design in Footer */
 
-#button-area {
+.button-area {
     display: flex;                  
     flex-direction: row;            
     flex-wrap: nowrap;              
@@ -129,9 +142,9 @@ h4 {
 
 }
 
-#play,
-#feed,
-#sleep {
+#play-Btn,
+#feed-Btn,
+#sleep-Btn {
     border-radius: 15%;
 }
 
