@@ -11,7 +11,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
-         <!-- CSS STYLE -->
+         <!-- CSS STYLE SHEETS-->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
         <!-- JQUERY SCRIPT-->
         <script
@@ -41,8 +42,8 @@
             <div class="lightSwitch">
                 <input type="checkbox" class="checkbox" id="chk" />
                 <label class="label" for="chk">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
+                    <i class="fa fa-moon-o"></i>
+                    <i class="fa fa-sun-o"></i>
                     <div class="ball"></div>
                 </label>
             </div>
@@ -58,17 +59,17 @@
             </header>
         
             <main>
-            <div id="lights-off"></div> 
+            <!-- <div id="lights-off"></div>  -->
              <!-- PET GOES HERE -->   
                 <div class= "pet-area"> <!-- This is the same as div class astronaut-->
                  <!-- Default Pet Image  -->
                 <div id="stand"><img src="Images/Hamster/hamster_standing.gif" alt="stand"></div>
                 <!-- Pet Image for Play -->
-                <div id="play"><img src="Images/Hamster/hamster_walking.gif" alt="play"></div>
+                <!-- <div id="play"><img src="Images/Hamster/hamster_walking.gif" alt="play"></div> -->
                 <!-- Pet Image for Feed-->
-                <div id="eat"><img src="Images/Hamster/hamster_eating.gif" alt="eat"></div>
+                <!-- <div id="eat"><img src="Images/Hamster/hamster_eating.gif" alt="eat"></div> -->
                 <!-- Pet Image for Sleep -->
-                <div id="sleep"><img src="Images/Hamster/hamster_sleeping.png" alt="sleep"></div> 
+                <!-- <div id="sleep"><img src="Images/Hamster/hamster_sleeping.png" alt="sleep"></div>  -->
              </div>
             </main>
             
@@ -87,12 +88,12 @@
          <!-- PLAY PROGRESS -->
                 <div class= "Playprogress">
 
-                <div class="boredomBox">
+                <div class="boredBox">
                 <div class="bar" id="boredTimer">Bored Level: 0</div>
                 </div>
            
-                <div class="foodBox">
-                <div class="bar" id="foodTimer">Hunger Level: 0</div>
+                <div class="hungerBox">
+                <div class="bar" id="hungerTimer">Hunger Level: 0</div>
                 </div> 
                 <div class="sleepBox">
                 <div class= "bar" id= "sleepTimer">Sleep Level: 0</div>
@@ -106,11 +107,11 @@
 
                 <div class= "button-area">
 
-                <div class ="boredomBox">
+                <div class ="boredBox">
                 <button id="play-Btn"><img src="Images/Radio.jpeg" alt="play"></button>
                 </div>
 
-                <div class ="foodBox">
+                <div class ="hungerBox">
                 <button id="feed-Btn"><img src="Images/Apple.jpeg" alt="feed"></button>
                 </div>
                 
