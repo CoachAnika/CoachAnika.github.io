@@ -21,31 +21,44 @@
         <!-- JS SCRIPT -->      
         <script src="js/app.js" async defer></script>
         <!-- Add audio elements here. -->
+
+        
     </head>
     <body>
+        
 
     <div>
         <div class="container">
+            
+            
 
         <!-- partTwo here.-->
         <!-- Everything that is on the other html file is here -->
         <!-- partTwo here, which is the main game play-->
             <header>
-            <!-- NAME HERE -->    
-           
+            <!-- NAME HERE --> 
+            <div id="lights-off"></div>
+            <div class="lightSwitch">
+                <input type="checkbox" class="checkbox" id="chk" />
+                <label class="label" for="chk">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+            </div>
             <div class="nameBox"> 
-      
                 <input type="text" id="petName"  placeholder="Enter Name" maxlength='15' />
                 <button class="submitButton">Name your pet.</button>
-                
             </div>
 
-                <div class="ageBar">
+            <div class="ageBar">
                 <span id="ageTimer"> Age: 0 Days </span> <!-- every 1min. gets 1 day older. -->
-              </div>
+              
+            </div>
             </header>
         
             <main>
+            <div id="lights-off"></div> 
              <!-- PET GOES HERE -->   
                 <div class= "pet-area"> <!-- This is the same as div class astronaut-->
                  <!-- Default Pet Image  -->

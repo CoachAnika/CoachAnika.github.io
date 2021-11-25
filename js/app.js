@@ -98,45 +98,42 @@ class Player {
     
     
 // Change Image on Event Listener for play
-// $("#play-Btn").on("click",function playerPlay(){
-//     $("#stand img").hide();
-//     $("#eat img").hide();
-//     $("#sleep img").hide();
-//     $("#play img").fadeIn(1000);
-// });
+$("#play-Btn").on("click",function playerPlay(){
+    $("#stand img").hide();
+    $("#eat img").hide();
+    $("#sleep img").hide();
+    $("#play img").fadeIn(1000);
+});
 
 // Change Image on Event Listener for eat
-// $("#feed-Btn").on("click",function playerEat(){
-//     $("#stand img").hide();
-//     $("#play img").hide();
-//     $("#sleep img").hide();
-//     $("#eat img").fadeIn(1000);
-// });
-
-//TBD
-// Setting Timer//
-//     function start_countdown(){
-//     var reverse_counter = 10;
-// var downloadTimer = setInterval(function(){
-//   document.getElementById("pbar").value = 10 - --reverse_counter;
-//   if(reverse_counter <= 0)
-//     clearInterval(downloadTimer);
-  
-//   document.getElementById("counting").innerHTML= reverse_counter;
-  
-// },1000);
-// }
+$("#feed-Btn").on("click",function playerEat(){
+    $("#stand img").hide();
+    $("#play img").hide();
+    $("#sleep img").hide();
+    $("#eat img").fadeIn(1000);
+});
 
 
-//TBD
-// Script to redirect Main to Index and start game//
-
-// $(".start").on("click",function redirect (){
-//     let url = "index.html";
-//     window.location(url);
-// });
     
  
+//To toggle to dark 
+
+$("#chk").on("click",function myFunction(){
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+ });
 
 
+//Event Listeners for Sleep Button
 
+ $(".sleepBox").on("click",function myFunction(){
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+ });
+
+ $(".sleepBox").on("click",function playerSleep(){
+    $("#stand img").hide();
+    $("#eat img").hide();
+    $("#play img").hide();
+    $("#sleep img").fadeIn(1000);
+ });   
