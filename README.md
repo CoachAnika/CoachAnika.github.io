@@ -1,4 +1,24 @@
 # CoachAnika.github.io
+DAY 3:
+Scope for the project changes by the day. It is good and going in the right -- sensible direction. Amazes me how all code logic is action driven! My wireframe just days ago seems amateur.
+I want to make sure I have my MVP down before working on UI/ UX elements. 
+Got the game timer set-up to start when user inputs name for the pet. 
+Also, set up sleep timer to start as the game starts.
+When user clicks the sleep button -- timer reduces.
+Will try my best to keep it DRY, but most likely will be setting up boredom and feed timers from sleep timer.  
+The animated progress bars are still on the page and scroll. I can tie the interval of the animation to the timers -- but they will remain aesthetic. 
+I am showing actual scores with numbers -- as they are inset in the animated timer. 
+
+Age in days also start counting as the game starts. 
+
+Next Steps: 
+1. See how pet can be morphed at a certain age. 
+2. Setup the name to display and stick, once the user has added it and the game has started.  
+3. Thinking through the game start and game end UI pages.
+4. Look into how lights can be turned off with sleep timer. 
+5. Set up timers for play and hunger.
+
+
 DAY 2:
 Got the pet on the page with it's eating, sleeping, dancing versions. Added event listeners for the buttons so that on clicking button Feed, eating pet shows up, on sleep, sleeping pet version shows up etc. Still have to clean this logic so that default pet shows all times.    
 
@@ -8,7 +28,7 @@ Will change scope to have logic in place and have numbers/ scores  show up on pa
 Next Steps:
 1. Set a timer to the game start when user has added name and hits play. 
 2. As user hits buttons for feed, sleep, play, timer should reset, giving more time for user to play and tama to grow.
-3. Rethink name and game in header. 
+3. Rethink name and age in header. 
 4. Research how multiple pages can be coded on one html file and how that might work for the different pages/ parts of the game.
 
 
@@ -23,8 +43,8 @@ g. Added pet image to Main, which I will need to change to an animated gif. I al
 h. On Main page, I am calling on a prebuilt CSS library from materialize, so not having overflow issues, and other design elements look more slick.
 
 Next Steps: 
-Working on main element of Game Interface to bring in pet. 
-Starting with javascript to start building interactivity on the page -- first step link pet to feed, play, sleep buttons. 
+1. Working on main element of Game Interface to bring in pet. 
+2. Starting with javascript to start building interactivity on the page -- first step link pet to feed, play, sleep buttons. 
 
 Tamagotchi Game 
 Game Start Page + Main Game Interface

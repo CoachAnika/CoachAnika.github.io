@@ -12,10 +12,10 @@ body {
 {
   display: grid;
   grid-template-rows: 0.5fr 5fr 1.5fr;
-  grid-template-columns:  2fr 0.5fr 0.5fr;
+  grid-template-columns:  2fr 1fr 1fr;
   grid-template-areas:
-    "header aside aside"
-    "main   aside  aside"
+    "header header header"
+    "main   main  aside"
     "footer footer footer";
   grid-gap: .75em;
   background-color: #eee;
@@ -90,14 +90,14 @@ h4 {
   height: 5%;
   background-color:#1abc9c;
   margin: 20px;
-  animation: progress-animation 500s forwards;
+  animation: progress-animation 100s forwards;
   border-radius: 7px;
 
   }
   
 
 @keyframes progress-animation {
-  0% { width: 0%;}
+  0% { width: 30%;}
   100% { width: 100%;}
 
 }

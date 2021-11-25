@@ -1,88 +1,142 @@
-/*GLOBAL VARIABLES*/
-let time = 0;
+//Initialize game with name submit//
 
-// Setting Object
+const $submitButton = $("button.submitButton");
 
-class Tamagotchi {
-    constructor() {
-        this.hunger = 0,
-        this.fatigue = 0,
-        this.boredom = 0,
-        this.age = 1,
-        this.alive = true
-        this.image = "",
-        this.stage = 0,
-        this.evolutionOne = ""
-    }
+let $playerName;
 
-    // have to add tamagotchi functions here.
+$submitButton.on("click", function logPlayerName () {
+    $playerName = document.getElementById('petName').value;
+    firstPet = new Player ()
+    setTimer();
+    sleepTimer();
+});
+
+//Timer for Sleep//
+
+let sleepCount = 0; 
+
+const sleepTimer = function sleepTimer () { 
+    const updateSleepTime = function updateSleepTime () {
+        console.log("Every 5 seconds, character's sleep level increases by 1. The count is now:", sleepCount);
+        sleepCount++;
+        firstPet.sleepLevel++;
+        $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
+        if (sleepCount >= 10) {
+            prompt("Game Over");
+            deathScreen();
+        }
+     
+
+    };
+    timers.sleep = setInterval (updateSleepTime, 2 * 1000);   
 };
 
-//Adding Event Listeners
-// Can I call two functions in an event listener.
+// ALL TIMERS HERE
 
-// const feedBtn = document.getElementById("feed-Btn");
-// feedBtn.addEventListener("click", function(evt) {
-//     console.log(evt);
-// });
+const timers = {
+    
+    
+    sleep: null, 
+    age: null,
+}
 
-// const playBtn = document.getElementById("play-Btn");
-// playBtn.addEventListener("click", function(evt) {
-//     console.log(evt);
-// });
-
-// const sleepBtn = document.getElementById("sleep-Btn");
-// sleepBtn.addEventListener("click", function(evt) {
-//     console.log(evt);
-// });
-
-// Change Level on Event Listener
-// let boredCount = 1;
-// const firstPlayer = new Tamagotchi()
-// const boredTimer = function boredTimer() {
-//     console.log("Every 30 seconds, characters boredom level increases by 1. The count is now:", boredCount);
-//     boredCount++
-//     firstPlayer.boredLevel++;
-//     $("#boredTimer").text(`Boredom Level: ${firstPlayer.boredLevel}.`)
-// };
-
-// document.getElementById('play-Btn').onclick=function(){
-//     let boredomLevel = parseInt(document.getElementById("boredTimer").innerHTML);
-//     boredTimer++
-//     document.getElementById("boredTimer").innerHTML= boredomLevel;
-// }
-// Default pet-area
-// $("#eat img").hide();
-// $("#play img").hide();
-// $("#sleep img").hide();
-// $("#stand img").fadeIn(1000);
-
-
-// Change Image on Event Listener for sleep
-$("#sleep-Btn").on("click",function playerSleep(){
-    $("#stand img").hide();
-    $("#eat img").hide();
-    $("#play img").hide();
-    $("#sleep img").fadeIn(1000);
+// Event Listener for reducing sleep timer//
+$(".sleepBox").on("click",function playerSleep(){
+    // $("#stand img").hide();
+    // $("#eat img").hide();
+    // $("#play img").hide();
+    // $("#sleep img").fadeIn(1000);
+    if (sleepCount > 1) {
+    sleepCount--;
+    firstPet.sleepLevel--;
+    $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
+    } else if (sleepCount < 1) {
+        $(".sleepBox").css("pointer-events:", "auto:");
+    }
 });
-   
+
+
+// Age Timer, setTimer for Game//
+
+let time = 1; 
+
+const setTimer = function setTimer() {
+    const updateTime = function updateTime() {
+        console.log("Every 15 seconds, character's age is 1 day older", time);
+        $("#ageTimer").text(`Age: ${time} Days`);
+        time++;
+        firstPet.age++;
+    };
+    timers.age = setInterval (updateTime, 10 * 1000);
+};
+
+class Player {
+    constructor() {           
+      // default props
+    this.sleepLevel = sleepCount;
+    this.age = time;
+      // assigned props
+    this.name =  $playerName;
+      
+    }
+    /* Class Player for later operational use */
+  };
+    function deathScreen(){
+    clearInterval(timers.sleep);
+    clearInterval(timers.age);
+  } 
+
+
+//   Change Image on Event Listener for sleep
+// $(".sleepBox").on("click",function playerSleep(){
+    // $("#stand img").hide();
+    // $("#eat img").hide();
+    // $("#play img").hide();
+    // $("#sleep img").fadeIn(1000);
+// });
+
+    
+    
 // Change Image on Event Listener for play
-$("#play-Btn").on("click",function playerPlay(){
-    $("#stand img").hide();
-    $("#eat img").hide();
-    $("#sleep img").hide();
-    $("#play img").fadeIn(1000);
-});
+// $("#play-Btn").on("click",function playerPlay(){
+//     $("#stand img").hide();
+//     $("#eat img").hide();
+//     $("#sleep img").hide();
+//     $("#play img").fadeIn(1000);
+// });
 
 // Change Image on Event Listener for eat
-$("#feed-Btn").on("click",function playerEat(){
-    $("#stand img").hide();
-    $("#play img").hide();
-    $("#sleep img").hide();
-    $("#eat img").fadeIn(1000);
-});
+// $("#feed-Btn").on("click",function playerEat(){
+//     $("#stand img").hide();
+//     $("#play img").hide();
+//     $("#sleep img").hide();
+//     $("#eat img").fadeIn(1000);
+// });
+
+//TBD
+// Setting Timer//
+//     function start_countdown(){
+//     var reverse_counter = 10;
+// var downloadTimer = setInterval(function(){
+//   document.getElementById("pbar").value = 10 - --reverse_counter;
+//   if(reverse_counter <= 0)
+//     clearInterval(downloadTimer);
+  
+//   document.getElementById("counting").innerHTML= reverse_counter;
+  
+// },1000);
+// }
 
 
+//TBD
+// Script to redirect Main to Index and start game//
+
+// $(".start").on("click",function redirect (){
+//     let url = "index.html";
+//     window.location(url);
+// });
+    
+ 
 
 
 
