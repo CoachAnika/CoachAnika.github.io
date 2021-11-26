@@ -1,5 +1,4 @@
 //INITIALIZE //
-
 const $submitButton = $("button.submitButton");
 let $playerName; // Declared later.
 
@@ -8,19 +7,29 @@ $submitButton.on("click", function logPlayerName () {
     $playerName = document.getElementById('petName').value;
     firstPet = new Player ()
     collectName();
-    $("#input-form").remove();
     boredTimer();
     hungerTimer();
     sleepTimer();
     setTimer(); 
-    $('#egg').show(); 
-    $("#egg").addClass('flash');
+    $("#input-form").remove();
+    $('#egg').show();
+
+//  $('#hatch').show(); 
+});
+
+$("#egg").addClass('flash'); //Will this work if I get it out of the function//
+
+/* If user clicks Enter key, same as button click $submitButton */
+$("#petName").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $($submitButton).click();
+    }
 });
 
 
-// Collect Name Function
+// Collect Name Function and append it to the name field in the header
 const collectName = function collectName() {
-    console.log("sanity check");
+    // console.log("sanity check");
     firstPet.name = $('#petName').val();
     $('#span-name').text(`    ${firstPet.name}`);
 };
@@ -86,17 +95,44 @@ const sleepTimer = function sleepTimer () {
 
 // Age Timer/
 
-let time = 1; 
+let time = 0; 
 
 const setTimer = function setTimer() {
     const updateTime = function updateTime() {
-        console.log("Every 15 seconds, character's age is 1 day older", time);
-        $("#ageTimer").text(`Age: ${time} Days`);
         time++;
-        firstPet.age++;
+        firstPet.age++; 
+        $("#ageTimer").text(`Age: ${time} Days`);
+        if (time >= 3) {
+            console.log("changed image should show up. Time is now:", time);
+            petTransform();
+            petTransformEgg();
+        
+        }
     };
-    timers.age = setInterval (updateTime, 6 * 1000);
+    timers.age = setInterval (updateTime, 2 * 1000);
 };
+
+// const petTransform = function petTransform() {
+//     console.log("Chicken-show sanity check");
+//     let img = document.getElementById('hatch');
+//    img.style.visibility ='visible';
+// };
+
+const petTransform = function petTransform() {
+    console.log("Chick-sanity check");
+    $('#hatch').show(); 
+};
+
+const petTransformEgg = function petTransformEgg() {
+    console.log("Egg-sanity check");
+    $('#egg').hide(); 
+};
+
+// const petTransformEgg = function petTransformEgg() {
+// console.log("Egg-hidesanity check");
+//    let img = document.getElementById('egg');
+//    img.style.visibility ='hidden';
+// };
 
 // ALL TIMERS HERE
 const timers = {
@@ -110,37 +146,46 @@ const timers = {
 
 // Event Listener for reducing bored timer//
 $(".boredBox").on("click",function playerBored(){
-    if (boredCount > 1) {
-    boredCount--;
+    if (boredCount < 1) {
+        $(".boredBox").css("pointer-events:", "none;");
+    
+    } else if (boredCount > 1) {
+        boredCount--;
     firstPet.boredLevel--;
     $("#boredTimer").text(`Bored Level: ${firstPet.boredLevel}`)
-    } else if (boredCount < 1) {
-        $(".boredBox").css("pointer-events:", "auto:");
+        
     }
 });
 
 //Event Listener for reducing hunger timer//
 
 $(".hungerBox").on("click",function playerHunger(){
-    if (hungerCount > 1) {
-    hungerCount--;
-    firstPet.hungerLevel--;
-    $("#hungerTimer").text(`Hunger Level: ${firstPet.hungerLevel}`)
-    } else if (hungerCount < 1) {
-        $(".hungerBox").css("pointer-events:", "auto:");
+    if (hungerCount < 1) {
+        $(".hungerBox").css("pointer-events:", "none;");
+    
+    } else if (hungerCount > 1) {
+        hungerCount--;
+        firstPet.hungerLevel--;
+        $("#hungerTimer").text(`Hunger Level: ${firstPet.hungerLevel}`)
     }
 });
 
 
 // Event Listener for reducing sleep timer//
 $(".sleepBox").on("click",function playerSleep(){
-    if (sleepCount > 1) {
-    sleepCount--;
-    firstPet.sleepLevel--;
+    if (sleepCount < 1) {
+        $(".sleepBox").css("pointer-events:", "none;");
     $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
-    } else if (sleepCount < 1) {
-        $(".sleepBox").css("pointer-events:", "auto:");
+
+    } else if (sleepCount > 1) {
+        sleepCount--;
+        firstPet.sleepLevel--;
+        $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
     }
+    // if (firstPet.age >= 3) {
+    //     $('#hatch').show();
+
+    // }
 });
 
 // Class Player for later operational use //
@@ -169,11 +214,9 @@ class Player {
   } 
 
   // HIDE PET IMAGES AND SHOW WHEN TRANSFORM
-    $('#egg').hide();   
-    $('#stand').hide(); 
-    $("#eat").hide();
-    $("#sleep").hide();
-    $("#play").hide();
+$('#hatch').hide(); 
+$('#egg').hide(); 
+
 
 
 //   Change Image on Event Listener for sleep
