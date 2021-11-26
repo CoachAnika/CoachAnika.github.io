@@ -1,17 +1,29 @@
-//Initialize game with name submit//
+//INITIALIZE //
 
 const $submitButton = $("button.submitButton");
-
 let $playerName; // Declared later.
 
+// GAME STARTS WITH NAME
 $submitButton.on("click", function logPlayerName () {
     $playerName = document.getElementById('petName').value;
     firstPet = new Player ()
+    collectName();
+    $("#input-form").remove();
     boredTimer();
     hungerTimer();
     sleepTimer();
     setTimer(); 
+    $('#egg').show(); 
+    $("#egg").addClass('flash');
 });
+
+
+// Collect Name Function
+const collectName = function collectName() {
+    console.log("sanity check");
+    firstPet.name = $('#petName').val();
+    $('#span-name').text(`    ${firstPet.name}`);
+};
 
 // ALL TIMERS HERE//
 
@@ -87,17 +99,12 @@ const setTimer = function setTimer() {
 };
 
 // ALL TIMERS HERE
-
 const timers = {
-    
     bored: null,
     hunger: null,
     sleep: null, 
     age: null,
 }
-
-
-
 
 // EVENT LISTENERS FOR REDUCING TIMERS//
 
@@ -151,6 +158,8 @@ class Player {
     }
     /* Class Player for later operational use */
   };
+
+  //GAME END SCREEN. DEFAULT WITH PROMPT AND RESET TIMERS
     function deathScreen(){
     clearInterval(timers.bored);
     clearInterval(timers.hunger);
@@ -158,6 +167,13 @@ class Player {
     clearInterval(timers.age);
    
   } 
+
+  // HIDE PET IMAGES AND SHOW WHEN TRANSFORM
+    $('#egg').hide();   
+    $('#stand').hide(); 
+    $("#eat").hide();
+    $("#sleep").hide();
+    $("#play").hide();
 
 
 //   Change Image on Event Listener for sleep
@@ -188,8 +204,8 @@ class Player {
 
 
     
- 
-//To toggle to dark 
+ //TO TOGGLE TO DARK
+//To toggle to dark with light button
 
 $("#chk").on("click",function myFunction(){
     let element = document.body;
@@ -197,7 +213,7 @@ $("#chk").on("click",function myFunction(){
  });
 
 
-//Event Listeners for Sleep Button
+//To toggle to dark with the Sleep buttomE
 
  $(".sleepBox").on("click",function myFunction(){
     let element = document.body;

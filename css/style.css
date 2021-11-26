@@ -1,15 +1,102 @@
 
-/* * {
-    margin: 20;
-    padding: 20;
-  } */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
 body {
     overflow: hidden;
-    position: absolute;
     z-index: 3;
-    
 } 
 
+
+.pet-area{
+  justify-content: center;
+  margin-top: 80px;
+}
+
+
+#input-form {
+  z-index: 4;
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  background-color: rgb(197, 228, 228);
+  border-radius: 20px;
+}
+
+#quit-sleep {
+  z-index: 5;
+  top: 35%;
+  left: 30%;
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  background-color: rgb(12, 15, 15);
+  display: none;
+  justify-content: center;
+  align-content: center;
+}
+
+#quit-hunger {
+  z-index: 6;
+  top: 35%;
+  left: 30%;
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  background-color: rgb(12, 15, 15);
+  display: none;
+  justify-content: center;
+  align-content: center;
+
+}
+
+#quit-bored {
+  z-index: 6;
+  top: 35%;
+  left: 30%;
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  background-color: rgb(12, 15, 15);
+  display: none;
+  justify-content: center;
+  align-content: center;
+
+}
+
+
+.inputField {
+  margin-top: 50px;
+  padding-top: 10px;
+  width: 200px;
+  margin-left: 30px;
+}
+
+#petName {
+padding: 10px;
+margin-left: 40px;
+}
+
+
+
+header .left {
+  height: 100%;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+
+
+header .right {
+  height: 100%;
+  flex-grow: 1;
+  
+}
 
 .container
 {
@@ -37,6 +124,7 @@ main
 {
   grid-area: main;
   background-color: white; 
+  
 }
 
 aside
@@ -60,21 +148,26 @@ footer
 
 }
 
+.nameBox > p, #ageTimer, .bar {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+}
+
 
 /* Code for Box Design in Aside */
 
-h4 {
+/* h4 {
   display: flex;
   position: relative;
 
-}
+} */
 
 .instbox {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: left;
   height: 200px;
-  border: 0.5rem outset khaki;
+  /* border: 0.5rem outset khaki; */
   /* outline: 0.5rem solid khaki; */
   /* box-shadow: 0 0 0 2rem skyblue; */
   /* border-radius: 12px; */
@@ -101,10 +194,24 @@ h4 {
   
 
 @keyframes progress-animation {
-  0% { width: 30%;}
+  0% { width: 50%;}
   100% { width: 100%;}
 
 }
+
+@keyframes flash {
+  0%, 50%, 100% { opacity: 1;}
+  25%, 75% {opacity: 0;}
+}
+
+.flash {
+animation-timing-function: ease-in-out;
+animation-name: flash;
+animation-duration: .01s;
+animation-iteration-count: 1200;
+}
+
+
 
 /* .feedProgress {
   position: relative;
@@ -137,19 +244,37 @@ h4 {
 
 /* Code for Button Design in Footer */
 
-.button-area {
-    display: flex;                  
-    flex-direction: row;            
-    flex-wrap: nowrap;              
-    justify-content: space-evenly; 
-    
+/* Start Button*/
 
+.submitButton {
+  margin-top: 20px;
+  margin-left: 55px;
+  padding: 11px 0px;
+  border-radius: 999px;
+  background-color: transparent;
+  border: 4px solid;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  background-color:#ddd;
+  position: fixed;
+  padding: 0.5em;  
+  /* transform: translateX(-50%); */ 
+} 
+
+.button-area {
+display: flex;                  
+flex-direction: row;            
+flex-wrap: nowrap;              
+justify-content: space-evenly; 
 }
 
 #play-Btn,
 #feed-Btn,
 #sleep-Btn {
     border-radius: 15%;
+    cursor: pointer;
+
 }
 
 /* #play {
@@ -178,7 +303,7 @@ h4 {
 
 button:hover,
 button:focus {
-  background: #0053ba;
+  background:whitesmoke;
 }
 
 button:focus {
@@ -199,7 +324,7 @@ button:active {
     margin-bottom: 16px;
     
 } */
-.start {
+/* .start {
   background-image: url(Images/hamster.jpg);
   position: relative;
     top: 0;
@@ -211,8 +336,8 @@ button:active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
+    text-align: center; */
+/* } */
 /* .start-popup {
     position: relative;
     top: 0;
@@ -228,7 +353,7 @@ button:active {
    
 } */
 
-.start-form {
+/* .start-form {
     margin: 48px 0;
     display: flex;
     flex-direction: column;
@@ -257,21 +382,11 @@ button:active {
     color: greenyellow;
 }
 
-.start-btn {
-    width: 12vw;
-    padding: 20px 0px;
-    border-radius: 999px;
-    background-color: transparent;
-    border: 4px solid;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: large;
-    margin-top: 24px;
-}
+
 
 .start-btn:hover {
     background-color: greenyellow;
-}
+} */
 
 /* Code for lights on-off switch  */
 

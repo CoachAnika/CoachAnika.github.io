@@ -12,8 +12,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
          <!-- CSS STYLE SHEETS-->
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/style.css">
+        
+
         <!-- JQUERY SCRIPT-->
         <script
         src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
@@ -25,21 +28,54 @@
 
         
     </head>
-    <body>
-        
+    <body class="pop_popouts">
+        <!--Input Form-->
+        <div class="nameBox" id="input-form">
+             <div class="inputField">
+            <!-- <label> Name your pet</label> -->
+            <input type="text" id="petName" placeholder="Name your pet.">
+            <button class="submitButton" >Start Game</button>
+        </div>
+     </div>
 
-    <div>
-        <div class="container">
-            
-            
+     <!-- Quit Windows -->
+        <div class="quitBox" id="quit-sleep">
+        <p> Your pet needed more sleep.</p>
+        </div>
 
-        <!-- partTwo here.-->
-        <!-- Everything that is on the other html file is here -->
-        <!-- partTwo here, which is the main game play-->
-            <header>
+        <div class="quitBox" id="quit-hunger">
+        <p> Your pet needed to eat more.</p>
+        </div>
+
+        <div class="quitBox" id="quit-bored">
+        <p> Your pet needed more play-time.</p>
+        </div>
+
+     <!-- Light Switch -->
+        <div id="lights-off"></div>
+
+
+    <div class="container">
+            
+      <!-- Main Game Play is here -->
+            <header class="header">
             <!-- NAME HERE --> 
-            <div id="lights-off"></div>
-            <div class="lightSwitch">
+            <div class="header left">
+                <div class="nameBox">
+                    <p>Name:<span id="span-name"></span></p>
+                </div>
+            
+            <!-- AGE COUNTER HERE --> 
+            
+            <div class="header middle"></div>
+                <div class="ageBar">
+                    <span id="ageTimer"> Age: 0 Days </span>  
+              
+            </div>
+            <div class="header right">
+             
+            <!-- LIGHT SWITCH ON/ OFF BUTTON HERE --> 
+                <div class="lightSwitch">
                 <input type="checkbox" class="checkbox" id="chk" />
                 <label class="label" for="chk">
                     <i class="fa fa-moon-o"></i>
@@ -47,15 +83,9 @@
                     <div class="ball"></div>
                 </label>
             </div>
-            <div class="nameBox"> 
-                <input type="text" id="petName"  placeholder="Enter Name" maxlength='15' />
-                <button class="submitButton">Name your pet.</button>
-            </div>
+   
 
-            <div class="ageBar">
-                <span id="ageTimer"> Age: 0 Days </span> <!-- every 1min. gets 1 day older. -->
-              
-            </div>
+            
             </header>
         
             <main>
@@ -63,7 +93,9 @@
              <!-- PET GOES HERE -->   
                 <div class= "pet-area"> <!-- This is the same as div class astronaut-->
                  <!-- Default Pet Image  -->
-                <div id="stand"><img src="Images/Hamster/hamster_standing.gif" alt="stand"></div>
+                <div id="egg"><img src="Images/Hamster/hamster_egg.png" alt="egg" >
+                <!-- <div id="stand"><img src="Images/Hamster/hamster_standing.gif" alt="stand" > -->
+                <div id="hatch"><img src="Images/Hamster/chicken_hatched.png" alt="hatch" >
                 <!-- Pet Image for Play -->
                 <!-- <div id="play"><img src="Images/Hamster/hamster_walking.gif" alt="play"></div> -->
                 <!-- Pet Image for Feed-->
@@ -76,14 +108,19 @@
             <aside>
        <!-- INSTRUCTIONS-->
                 <div class= "instbox">
-                <h4>Game Instructions:</h4>
-                    <ol>
-                        <li>Play with pet.</li>
-                        <li>Feed your pet.</li>
-                        <li>Rest your pet.</li>
-        
-                    </ol>
-                </div>
+                    <i class= "fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
+                    
+                        <p>
+                            <h2>
+                                ...take care of it and watch it grow. You lose if any of the levels go to 10.
+                            </h2>
+                            
+                        </p>
+                       
+
+                    
+                    
+            </div>
 
          <!-- PLAY PROGRESS -->
                 <div class= "Playprogress">
