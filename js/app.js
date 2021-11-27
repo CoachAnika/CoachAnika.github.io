@@ -103,10 +103,16 @@ const setTimer = function setTimer() {
         time++;
         firstPet.age++; 
         $("#ageTimer").text(`Age: ${time} Days`);
-        if (time >= 3) {
-            console.log("changed image should show up. Time is now:", time);
+        if (time >= 4) {
+            console.log("first transformation image should show up. Time is now:", time);
             petTransformHatch();
             petTransform1();
+        if (time >= 8) {
+            console.log("second transformation image should show up. Time is now:", time);
+            petTransformStand();
+            petTransform2();
+
+        }   
         
         }
     };
@@ -137,22 +143,15 @@ const petTransform1 = function petTransformEgg() {
     $('#egg').hide(); 
 };
 
+const petTransformStand = function petTransform() {
+    console.log("Chick-sanity check");
+    $('#stand').show(); 
+};
 
-// const petTransform2 = function petTransform() {
-//     console.log("Chick-sanity check");
-//     $('#hatch').show(); 
-// };
-
-// const petTransformStand= function petTransform() {
-//     console.log("Chick-sanity check");
-//     $('#hatch').show(); 
-// };
-
-// const petTransformEgg = function petTransformEgg() {
-// console.log("Egg-hidesanity check");
-//    let img = document.getElementById('egg');
-//    img.style.visibility ='hidden';
-// };
+const petTransform2 = function petTransform() {
+    console.log("Chick-sanity check");
+    $('#hatch').hide(); 
+};
 
 
 
@@ -232,8 +231,9 @@ class Player {
 }
 
   // HIDE PET IMAGES AT START AND SHOW As THEY TRANSFORM
-    $('#hatch').hide(); 
     $('#egg').hide(); 
+    $('#hatch').hide(); 
+    $('#stand').hide(); 
 
     
  //TO TOGGLE TO DARK
@@ -280,6 +280,12 @@ $('#play-Btn').on("click",function soundPlayButton() {
 //     console.log("Chicken-show sanity check");
 //     let img = document.getElementById('hatch');
 //    img.style.visibility ='visible';
+// };
+
+// const petTransformEgg = function petTransformEgg() {
+// console.log("Egg-hidesanity check");
+//    let img = document.getElementById('egg');
+//    img.style.visibility ='hidden';
 // };
 
 //EVENT LISTENERS FOR BUTTONS FOR THE FUTURE, TO CHANGE IMAGES ON CLICK//

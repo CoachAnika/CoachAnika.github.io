@@ -180,8 +180,9 @@ justify-content: space-evenly;
 #play-Btn,
 #feed-Btn,
 #sleep-Btn {
-    border-radius: 15%;
+    border-radius: 10%;
     cursor: pointer;
+  
 
 }
 
@@ -214,14 +215,11 @@ button:focus {
   background:whitesmoke;
 }
 
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
 button:active {
   transform: scale(0.99);
-} 
+}  */
+
+
 /*Animations*/
   
 @keyframes progress-animation {
