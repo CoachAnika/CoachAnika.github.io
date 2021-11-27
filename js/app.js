@@ -2,7 +2,7 @@
 
 let $playerName; // Declared later.
 const $submitButton = $("button.submitButton");
-const playFx = new Audio('./Audio/Early-morning-sounds-in-the-village.mp3');
+// const playFx = new Audio('./Audio/Early-morning-sounds-in-the-village.mp3');
 
 // GAME STARTS WITH NAME
 $submitButton.on("click", function logPlayerName () {
@@ -41,7 +41,7 @@ let boredCount = 0;
 
 const boredTimer = function boredTimer () { 
     const updateBoredTime = function updateBoredTime () {
-        console.log("Every 1 seconds, character's bored level increases by 1. The count is now:", boredCount);
+        console.log("Every 2 seconds, character's bored level increases by 1. The count is now:", boredCount);
         boredCount++;
         firstPet.boredLevel++;
         $("#boredTimer").text(`Bored Level: ${firstPet.boredLevel}`)
@@ -60,7 +60,7 @@ let hungerCount = 0;
 
 const hungerTimer = function hungerTimer () { 
     const updateHungerTime = function updateHungerTime () {
-        console.log("Every 2 seconds, character's bored level increases by 1. The count is now:", hungerCount);
+        console.log("Every 3 seconds, character's bored level increases by 1. The count is now:", hungerCount);
         hungerCount++;
         firstPet.hungerLevel++;
         $("#hungerTimer").text(`Hunger Level: ${firstPet.hungerLevel}`)
@@ -79,12 +79,11 @@ let sleepCount = 0;
 
 const sleepTimer = function sleepTimer () { 
     const updateSleepTime = function updateSleepTime () {
-        console.log("Every 5 seconds, character's sleep level increases by 1. The count is now:", sleepCount);
+        console.log("Every 4 seconds, character's sleep level increases by 1. The count is now:", sleepCount);
         sleepCount++;
         firstPet.sleepLevel++;
         $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
         if (sleepCount >= 10) {
-            
             gameOver();
             
         }
@@ -130,7 +129,7 @@ const timers = {
 
 
 
-// Wnat to do Two iterations of pet transformations. There has to be a better way to do this.//
+//Two iterations of pet transformations. There has to be a better way to do this.//
 
 
 const petTransformHatch= function petTransform() {
@@ -236,7 +235,7 @@ class Player {
     $('#stand').hide(); 
 
     
- //TO TOGGLE TO DARK
+ //TO TOGGLE TO DARK//
 //To toggle to dark with light button
 
 $("#chk").on("click",function myFunction(){
@@ -244,25 +243,26 @@ $("#chk").on("click",function myFunction(){
     element.classList.toggle("dark-mode");
  });
 
-
-//Button animations//
+//TO TOGGLE TO DARK//
+//To toggle to dark with sleep button//
  $(".sleepBox").on("click",function myFunction(){
     let element = document.body;
     element.classList.toggle("dark-mode");
  });
 
-// Need to find a way that this only affects the main element and not the entire body.//
-$('#feed-Btn').on("click",function animateFeedButton() {
-    let element = document.body;
-    element.classList.toggle("flash");
-
+//TO TOGGLE TO SOUND PLAY//
+//To toggle to bird sounds with play button//
+$('#play-Btn').on("click",function togglePlay () {
+    return playFx.paused ? playFx.play() : playFx.pause();
 });
 
-//Sound Effects// SEE IF SOUND CAB BE TOGGLED ON AND OFF//
-$('#play-Btn').on("click",function soundPlayButton() {
-    playFx.play();
-
+//TO FLASH MOVE DANCE//
+// To toggle to dancing bird on feed button//
+$('#feed-Btn').on("click", function feedDance() {
+    $('.pet-area').addClass('flash');
+    setTimeout(function () { $('.pet-area').removeClass('flash'); }, 1000);
 });
+
 
 //BUTTON ANIMATIONS//FUNCTIONS, CODE TO TRY OUT LATER//
 // Tried this but it would not toggle on click//
