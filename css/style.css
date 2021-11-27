@@ -6,7 +6,7 @@
 }
 
 body {
-overflow: hidden;
+/* overflow: hidden; */
 z-index: 3;
 } 
 
@@ -61,7 +61,8 @@ header
 main
 {
   grid-area: main;
-  background-color: white; 
+  background-color:lightgrey; 
+  /* background-image: url(Images/farm-background.jpg); */
   
 }
 
@@ -72,6 +73,13 @@ aside
   
 }
 
+/* #backImage {
+  image-rendering:pixelated;
+  width: 1px;
+  height: 1px;
+  z-index: auto;
+} */
+
 footer
 {
   grid-area: footer;
@@ -81,11 +89,13 @@ footer
 /* Code for Pet Design in Main*/
 
 .pet-area{
+  z-index: auto;
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 100px;
   flex-direction: column;
   align-items: center;
+  /* background: url(Images/farm-background.jpg); */
 }
 
 /* Code for Box Design in Aside */
@@ -180,8 +190,9 @@ justify-content: space-evenly;
 #play-Btn,
 #feed-Btn,
 #sleep-Btn {
-    border-radius: 10%;
+    border-radius: 50%;
     cursor: pointer;
+    background-color:whitesmoke;
   
 
 }
@@ -217,7 +228,9 @@ button:focus {
 
 button:active {
   transform: scale(0.99);
-}  */
+}  
+
+
 
 
 /*Animations*/
@@ -268,7 +281,7 @@ button:active {
   @keyframes flash {
     0%, 50%, 100% { opacity: 1;}
     25%, 75% {opacity: 0;}
-    100% { background-color: red;}
+    100% { color: red;}
   }
   
   .flash {
@@ -295,17 +308,17 @@ button:active {
 
 
 .dark-mode {
-	background-color: black;
-  color: white;
+	/* background-color: black; */
+  /* color: white; */
   position: absolute;
   display: block;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: black;
   z-index: 2;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 .checkbox {

@@ -259,8 +259,8 @@ $('#play-Btn').on("click",function togglePlay () {
 //TO FLASH MOVE DANCE//
 // To toggle to dancing bird on feed button//
 $('#feed-Btn').on("click", function feedDance() {
-    $('.pet-area').addClass('flash');
-    setTimeout(function () { $('.pet-area').removeClass('flash'); }, 1000);
+    $('#egg, #hatch, #stand').addClass('flash');
+    setTimeout(function () { $('#egg, #hatch, #stand').removeClass('flash'); }, 500);
 });
 
 
