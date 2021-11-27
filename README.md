@@ -1,4 +1,15 @@
 # CoachAnika.github.io
+DAY 4: 
+At this point MVP is complete. Last night decided to take static images and make the character a little chicken, instead of animated Korean character Moolang. Have tried some animations to the chicken image character, but there was so much more I wanted to do with sights and sounds.
+
+Next Steps:
+1. Add back-ground sound for play button.
+2. Add pet animation for eat button.
+3. Add better CSS for the buttons. 
+4. Add code so double-clicking a button is disabled. 
+5. Nice to Have: Add background sound, when game starts. 
+6. Nice to Have: Add a background image to the header/ footer. 
+
 DAY 3:
 Scope for the project changes by the day. It is good and going in the right -- sensible direction. Amazes me how all code logic is action driven! My wireframe just days ago seems amateur.
 I want to make sure I have my MVP down before working on UI/ UX elements. 
