@@ -6,81 +6,27 @@
 }
 
 body {
-    overflow: hidden;
-    z-index: 3;
+overflow: hidden;
+z-index: 3;
 } 
 
-/* #hatch {
-  z-index: 4
-} */
+/* Code for Text design in Header*/
 
-
-.pet-area{
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
-  flex-direction:column;
+header .left {
+height: 100%;
+flex-grow: 1;
+padding: 20px;
 }
 
 
-#input-form {
-  z-index: 4;
-  top: 25%;
-  left: 25%;
-  position: absolute;
-  height: 200px;
-  width: 300px;
-  background-color: rgb(197, 228, 228);
-  border-radius: 20px;
+header .right {
+height: 100%;
+flex-grow: 1;
+  
 }
-
-#quit-sleep {
-  z-index: 5;
-  top: 35%;
-  left: 30%;
-  position: absolute;
-  height: 200px;
-  width: 500px;
-  background-color: rgb(12, 15, 15);
-  display: none;
-  justify-content: center;
-  align-content: center;
-}
-
-#quit-hunger {
-  z-index: 6;
-  top: 35%;
-  left: 30%;
-  position: absolute;
-  height: 200px;
-  width: 500px;
-  background-color: rgb(12, 15, 15);
-  display: none;
-  justify-content: center;
-  align-content: center;
-
-}
-
-#quit-bored {
-  z-index: 6;
-  top: 35%;
-  left: 30%;
-  position: absolute;
-  height: 200px;
-  width: 500px;
-  background-color: rgb(12, 15, 15);
-  display: none;
-  justify-content: center;
-  align-content: center;
-
-}
-
-
-.inputField {
-  margin-top: 50px;
-  padding-top: 10px;
-  width: 200px;
-  margin-left: 30px;
+.nameBox > p, #ageTimer, .bar {
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 30px;
 }
 
 #petName {
@@ -88,21 +34,7 @@ padding: 10px;
 margin-left: 40px;
 }
 
-
-
-header .left {
-  height: 100%;
-  flex-grow: 1;
-  padding: 20px;
-}
-
-
-
-header .right {
-  height: 100%;
-  flex-grow: 1;
-  
-}
+/* Basic grid, the skeleton of the design */
 
 .container
 {
@@ -147,18 +79,14 @@ footer
 }
 
 /* Code for Pet Design in Main*/
-.pet-area {
-  display: flex;                  
-  flex-direction: column;   
+
+.pet-area{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  flex-direction: column;
   align-items: center;
-
 }
-
-.nameBox > p, #ageTimer, .bar {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 30px;
-}
-
 
 /* Code for Box Design in Aside */
 
@@ -173,10 +101,6 @@ footer
   flex-direction: column;
   align-items: left;
   height: 200px;
-  /* border: 0.5rem outset khaki; */
-  /* outline: 0.5rem solid khaki; */
-  /* box-shadow: 0 0 0 2rem skyblue; */
-  /* border-radius: 12px; */
   font: bold 1rem sans-serif;
   margin: 2rem;
   margin-bottom: 5rem;
@@ -184,73 +108,6 @@ footer
   outline-offset: 0.5rem;
 }
 
-/* Code for Progress Bar Design in Aside */
-
-/* .playProgress, .feedProgress, .sleepProgress { */
-  
-  .bar {
-  position: relative;
-  height: 5%;
-  background-color:#1abc9c;
-  margin: 20px;
-  animation: progress-animation 100s forwards;
-  border-radius: 7px;
-
-  }
-  
-
-@keyframes progress-animation {
-  0% { width: 50%;}
-  100% { width: 100%;}
-
-}
-
-@keyframes flash {
-  0%, 50%, 100% { opacity: 1;}
-  25%, 75% {opacity: 0;}
-}
-
-.flash {
-animation-timing-function: ease-in-out;
-animation-name: flash;
-animation-duration: .01s;
-animation-iteration-count: 1000;
-}
-
-
-
-
-
-/* .feedProgress {
-  position: relative;
-  height: 5%;
-  background-color:#1abc9c;
-  margin: 20px;
-  animation: progress-animation 10s forwards;
- 
-}
-
-@keyframes progress-animation {
-  0% { width: 0%;}
-  100% { width: 100%;}
-
-}
-
-.sleepProgress {
-  position: relative;
-  height: 5%;
-  background-color: #1abc9c;
-  margin: 20px;
-  animation: progress-animation 10s forwards;
-}
-
-@keyframes progress-animation {
-  0% { width: 0%;}
-  100% { width: 100%;}
-
-} */
-
-/* Code for Button Design in Footer */
 
 /* Start Button*/
 
@@ -269,6 +126,49 @@ animation-iteration-count: 1000;
   padding: 0.5em;  
   /* transform: translateX(-50%); */ 
 } 
+
+#input-form {
+  z-index: 99999;
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  height: 200px;
+  width: 300px;
+  background-color: rgb(197, 228, 228);
+  border-radius: 20px;
+}
+
+.inputField {
+  margin-top: 50px;
+  padding-top: 10px;
+  width: 200px;
+  margin-left: 30px;
+}
+
+/* GameOver and Restart*/
+
+.quitBox {
+    z-index: 6;
+    top: 35%;
+    left: 30%;
+    position: absolute;
+    height: 200px;
+    width: 500px;
+    background-color: rgb(12, 15, 15);
+    display: none;
+    justify-content: center;
+    align-content: center;
+}
+
+.quitBox > p {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+/* Code for Button Design in Footer */
 
 .button-area {
 display: flex;                  
@@ -322,79 +222,80 @@ button:focus {
 button:active {
   transform: scale(0.99);
 } 
-
-
-/* Main Start-Up Screen  */
-
-/* h1 {
-    font-size: 90px;
-    line-height: 1;
-    margin-bottom: 16px;
-    
-} */
-/* .start {
-  background-image: url(Images/hamster.jpg);
-  position: relative;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    height: 100%;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; */
-/* } */
-/* .start-popup {
+/*Animations*/
+  
+  .bar {
     position: relative;
-    top: 0;
-    left: 0;
-    z-index: 99;
-    height: 100%;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-   
-} */
-
-/* .start-form {
-    margin: 48px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} 
-
-.form input {
-    margin-bottom: 16px;
-    outline: none;
-}
-
-.get-username{
-    font-size: 32px;
-    text-align: center;
-}
-
-.username-field {
-    border: none;
-    border-bottom: 20px solid;
-    font-size: 32px;
-    text-align: center;
+    height: 5%;
+    background-color:#1abc9c;
+    margin: 20px;
+    animation: progress-animation 100s forwards;
+    border-radius: 7px;
+  
+    }
     
-}
+  
+  @keyframes progress-animation {
+    0% { width: 50%;}
+    100% { width: 100%;}
+  
+  }
+  
+  /* @keyframes bounce-animation {
+  
+  } */
+  
+  /* #egg {
+  display: inline-block;
+  margin: 0 0.5rem;
+  animation: bounce; 
+  animation-duration: 2s; 
+  animation-iteration-count: 1000;
+  } */
+  
+  /* @keyframes flash {
+    0%, 50%, 100% { opacity: 1;}
+    25%, 75% {opacity: 0;}
+  }
+  
+  .flash {
+  animation-timing-function: ease-in-out;
+  animation-name: flash;
+  animation-duration: .01s;
+  animation-iteration-count: 1000;
+  } */
+  
+  
+/* .feedProgress {
+    position: relative;
+    height: 5%;
+    background-color:#1abc9c;
+    margin: 20px;
+    animation: progress-animation 10s forwards;
+   
+  }
+  
+  @keyframes progress-animation {
+    0% { width: 0%;}
+    100% { width: 100%;}
+  
+  }
+  
+  .sleepProgress {
+    position: relative;
+    height: 5%;
+    background-color: #1abc9c;
+    margin: 20px;
+    animation: progress-animation 10s forwards;
+  }
+  
+  @keyframes progress-animation {
+    0% { width: 0%;}
+    100% { width: 100%;}
+  
+  } */
+  
 
-.placeholder {
-    color: greenyellow;
-}
-
-
-
-.start-btn:hover {
-    background-color: greenyellow;
-} */
 
 /* Code for lights on-off switch  */
 

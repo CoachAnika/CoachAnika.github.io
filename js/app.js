@@ -13,11 +13,9 @@ $submitButton.on("click", function logPlayerName () {
     setTimer(); 
     $("#input-form").remove();
     $('#egg').show();
-
-//  $('#hatch').show(); 
 });
 
-$("#egg").addClass('flash'); //Will this work if I get it out of the function//
+
 
 /* If user clicks Enter key, same as button click $submitButton */
 $("#petName").keyup(function(event) {
@@ -46,8 +44,9 @@ const boredTimer = function boredTimer () {
         firstPet.boredLevel++;
         $("#boredTimer").text(`Bored Level: ${firstPet.boredLevel}`)
         if (boredCount >= 10) {
-            prompt("Game Over");
-            deathScreen();
+            // prompt("Game Over");
+            gameOver();
+            // deathScreen();
         }
      
 
@@ -65,13 +64,14 @@ const hungerTimer = function hungerTimer () {
         firstPet.hungerLevel++;
         $("#hungerTimer").text(`Hunger Level: ${firstPet.hungerLevel}`)
         if (hungerCount >= 10) {
-            prompt("Game Over");
-            deathScreen();
+            // prompt("Game Over");
+            gameOver();
+            // deathScreen();
         }
      
 
     };
-    timers.hunger = setInterval (updateHungerTime, 4 * 1000);   
+    timers.hunger = setInterval (updateHungerTime, 3 * 1000);   
 };
 
 //Sleep Timer//
@@ -84,12 +84,13 @@ const sleepTimer = function sleepTimer () {
         firstPet.sleepLevel++;
         $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
         if (sleepCount >= 10) {
-            prompt("Game Over");
-            deathScreen();
+            // prompt("Game Over");
+            gameOver();
+            // deathScreen();
         }
      
     };
-    timers.sleep = setInterval (updateSleepTime, 6 * 1000);   
+    timers.sleep = setInterval (updateSleepTime, 4 * 1000);   
 };
 
 
@@ -104,8 +105,8 @@ const setTimer = function setTimer() {
         $("#ageTimer").text(`Age: ${time} Days`);
         if (time >= 3) {
             console.log("changed image should show up. Time is now:", time);
-            petTransform();
-            petTransformEgg();
+            petTransformHatch();
+            petTransform1();
         
         }
     };
@@ -118,15 +119,29 @@ const setTimer = function setTimer() {
 //    img.style.visibility ='visible';
 // };
 
-const petTransform = function petTransform() {
+// Two iterations of pet transformations. There has to be a better way to do this.//
+
+
+const petTransformHatch= function petTransform() {
     console.log("Chick-sanity check");
     $('#hatch').show(); 
 };
 
-const petTransformEgg = function petTransformEgg() {
+const petTransform1 = function petTransformEgg() {
     console.log("Egg-sanity check");
     $('#egg').hide(); 
 };
+
+
+// const petTransform2 = function petTransform() {
+//     console.log("Chick-sanity check");
+//     $('#hatch').show(); 
+// };
+
+// const petTransformStand= function petTransform() {
+//     console.log("Chick-sanity check");
+//     $('#hatch').show(); 
+// };
 
 // const petTransformEgg = function petTransformEgg() {
 // console.log("Egg-hidesanity check");
@@ -182,10 +197,6 @@ $(".sleepBox").on("click",function playerSleep(){
         firstPet.sleepLevel--;
         $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
     }
-    // if (firstPet.age >= 3) {
-    //     $('#hatch').show();
-
-    // }
 });
 
 // Class Player for later operational use //
@@ -217,7 +228,18 @@ class Player {
 $('#hatch').hide(); 
 $('#egg').hide(); 
 
+//BUTTON ANIMATIONS//FUNCTIONS
+// $('$hungerBox').on("click",function animeFeedButton() {
+//    addClass('animate_bounce animate_faster');
+//     setTimeout(function () { 
+//     removeClass('animate_bounce animate_faster'); 
+// }, 1000); 
+// })
 
+//EVENT LISTENERS FOR BUTTONS//
+
+
+//Will this work if I get it out of the function//
 
 //   Change Image on Event Listener for sleep
 // $(".sleepBox").on("click",function playerSleep(){
@@ -256,10 +278,17 @@ $("#chk").on("click",function myFunction(){
  });
 
 
-//To toggle to dark with the Sleep buttomE
-
+//Button animations//
  $(".sleepBox").on("click",function myFunction(){
     let element = document.body;
     element.classList.toggle("dark-mode");
  });
 
+
+//FUNCTION GAME OVER//
+
+function gameOver () {
+    $("#quit-game").css('display', 'flex');
+    $('#hatch').hide(); 
+    deathScreen();
+}
