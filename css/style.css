@@ -224,36 +224,50 @@ button:active {
 } 
 /*Animations*/
   
-  .bar {
+@keyframes progress-animation {
+  0% { width: 50%;}
+  100% { width: 100%;}
+
+}
+  #boredTimer {
+    position: relative;
+    height: 5%;
+    background-color:#1abc9c;
+    margin: 20px;
+    animation: progress-animation 500s forwards;
+    border-radius: 7px;
+  
+  }
+
+  #hungerTimer {
     position: relative;
     height: 5%;
     background-color:#1abc9c;
     margin: 20px;
     animation: progress-animation 100s forwards;
     border-radius: 7px;
-  
-    }
     
-  
-  @keyframes progress-animation {
-    0% { width: 50%;}
-    100% { width: 100%;}
-  
   }
-  
-  /* @keyframes bounce-animation {
-  
-  } */
-  
-  /* #egg {
+
+  #sleepTimer {
+    position: relative;
+    height: 5%;
+    background-color:#1abc9c;
+    margin: 20px;
+    animation: progress-animation 60s forwards;
+    border-radius: 7px;
+    
+  }
+    
+  #egg {
   display: inline-block;
   margin: 0 0.5rem;
   animation: bounce; 
   animation-duration: 2s; 
   animation-iteration-count: 1000;
-  } */
+  }
   
-  /* @keyframes flash {
+  @keyframes flash {
     0%, 50%, 100% { opacity: 1;}
     25%, 75% {opacity: 0;}
   }
@@ -263,39 +277,8 @@ button:active {
   animation-name: flash;
   animation-duration: .01s;
   animation-iteration-count: 1000;
-  } */
-  
-  
-/* .feedProgress {
-    position: relative;
-    height: 5%;
-    background-color:#1abc9c;
-    margin: 20px;
-    animation: progress-animation 10s forwards;
-   
   }
   
-  @keyframes progress-animation {
-    0% { width: 0%;}
-    100% { width: 100%;}
-  
-  }
-  
-  .sleepProgress {
-    position: relative;
-    height: 5%;
-    background-color: #1abc9c;
-    margin: 20px;
-    animation: progress-animation 10s forwards;
-  }
-  
-  @keyframes progress-animation {
-    0% { width: 0%;}
-    100% { width: 100%;}
-  
-  } */
-  
-
 
 /* Code for lights on-off switch  */
 

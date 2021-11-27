@@ -1,6 +1,8 @@
 //INITIALIZE //
-const $submitButton = $("button.submitButton");
+
 let $playerName; // Declared later.
+const $submitButton = $("button.submitButton");
+const playFx = new Audio('./Audio/Early-morning-sounds-in-the-village.mp3');
 
 // GAME STARTS WITH NAME
 $submitButton.on("click", function logPlayerName () {
@@ -25,7 +27,7 @@ $("#petName").keyup(function(event) {
 });
 
 
-// Collect Name Function and append it to the name field in the header
+// Collect Name Function to append it to the name field in the header
 const collectName = function collectName() {
     // console.log("sanity check");
     firstPet.name = $('#petName').val();
@@ -44,9 +46,8 @@ const boredTimer = function boredTimer () {
         firstPet.boredLevel++;
         $("#boredTimer").text(`Bored Level: ${firstPet.boredLevel}`)
         if (boredCount >= 10) {
-            // prompt("Game Over");
             gameOver();
-            // deathScreen();
+            
         }
      
 
@@ -64,9 +65,8 @@ const hungerTimer = function hungerTimer () {
         firstPet.hungerLevel++;
         $("#hungerTimer").text(`Hunger Level: ${firstPet.hungerLevel}`)
         if (hungerCount >= 10) {
-            // prompt("Game Over");
             gameOver();
-            // deathScreen();
+         
         }
      
 
@@ -84,9 +84,9 @@ const sleepTimer = function sleepTimer () {
         firstPet.sleepLevel++;
         $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
         if (sleepCount >= 10) {
-            // prompt("Game Over");
+            
             gameOver();
-            // deathScreen();
+            
         }
      
     };
@@ -113,13 +113,18 @@ const setTimer = function setTimer() {
     timers.age = setInterval (updateTime, 2 * 1000);
 };
 
-// const petTransform = function petTransform() {
-//     console.log("Chicken-show sanity check");
-//     let img = document.getElementById('hatch');
-//    img.style.visibility ='visible';
-// };
 
-// Two iterations of pet transformations. There has to be a better way to do this.//
+// ALL TIMERS HERE
+const timers = {
+    bored: null,
+    hunger: null,
+    sleep: null, 
+    age: null,
+}
+
+
+
+// Wnat to do Two iterations of pet transformations. There has to be a better way to do this.//
 
 
 const petTransformHatch= function petTransform() {
@@ -149,15 +154,9 @@ const petTransform1 = function petTransformEgg() {
 //    img.style.visibility ='hidden';
 // };
 
-// ALL TIMERS HERE
-const timers = {
-    bored: null,
-    hunger: null,
-    sleep: null, 
-    age: null,
-}
 
-// EVENT LISTENERS FOR REDUCING TIMERS//
+
+// EVENT LISTENERS FOR REDUCING TIMERS ON CLICK//
 
 // Event Listener for reducing bored timer//
 $(".boredBox").on("click",function playerBored(){
@@ -183,6 +182,7 @@ $(".hungerBox").on("click",function playerHunger(){
         firstPet.hungerLevel--;
         $("#hungerTimer").text(`Hunger Level: ${firstPet.hungerLevel}`)
     }
+    
 });
 
 
@@ -215,7 +215,7 @@ class Player {
     /* Class Player for later operational use */
   };
 
-  //GAME END SCREEN. DEFAULT WITH PROMPT AND RESET TIMERS
+  //GAME END SCREEN. RESETS TIMERS//
     function deathScreen(){
     clearInterval(timers.bored);
     clearInterval(timers.hunger);
@@ -224,23 +224,65 @@ class Player {
    
   } 
 
-  // HIDE PET IMAGES AND SHOW WHEN TRANSFORM
-$('#hatch').hide(); 
-$('#egg').hide(); 
+  //PROMPT ON GAME OVER//
+    function gameOver () {
+    $("#quit-game").css('display', 'flex');
+    $('#hatch').hide(); 
+    deathScreen();
+}
 
-//BUTTON ANIMATIONS//FUNCTIONS
-// $('$hungerBox').on("click",function animeFeedButton() {
-//    addClass('animate_bounce animate_faster');
+  // HIDE PET IMAGES AT START AND SHOW As THEY TRANSFORM
+    $('#hatch').hide(); 
+    $('#egg').hide(); 
+
+    
+ //TO TOGGLE TO DARK
+//To toggle to dark with light button
+
+$("#chk").on("click",function myFunction(){
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+ });
+
+
+//Button animations//
+ $(".sleepBox").on("click",function myFunction(){
+    let element = document.body;
+    element.classList.toggle("dark-mode");
+ });
+
+// Need to find a way that this only affects the main element and not the entire body.//
+$('#feed-Btn').on("click",function animateFeedButton() {
+    let element = document.body;
+    element.classList.toggle("flash");
+
+});
+
+//Sound Effects// SEE IF SOUND CAB BE TOGGLED ON AND OFF//
+$('#play-Btn').on("click",function soundPlayButton() {
+    playFx.play();
+
+});
+
+//BUTTON ANIMATIONS//FUNCTIONS, CODE TO TRY OUT LATER//
+// Tried this but it would not toggle on click//
+// Feed button animated, TO REVISIT FOR SET TIMEOUT, IT NEEDS TO ALWAYS PLAY ON CLICK//
+// $('#feed-Btn').on("click",function animateFeedButton() {
+//     $(".pet-area").addClass('flash');
 //     setTimeout(function () { 
-//     removeClass('animate_bounce animate_faster'); 
+   
 // }, 1000); 
 // })
 
-//EVENT LISTENERS FOR BUTTONS//
+// ALTERNATIVE CODE FOR PET TRNSFORMATION LOGIC//
 
+// const petTransform = function petTransform() {
+//     console.log("Chicken-show sanity check");
+//     let img = document.getElementById('hatch');
+//    img.style.visibility ='visible';
+// };
 
-//Will this work if I get it out of the function//
-
+//EVENT LISTENERS FOR BUTTONS FOR THE FUTURE, TO CHANGE IMAGES ON CLICK//
 //   Change Image on Event Listener for sleep
 // $(".sleepBox").on("click",function playerSleep(){
     // $("#stand img").hide();
@@ -266,29 +308,3 @@ $('#egg').hide();
 //     $("#sleep img").hide();
 //     $("#eat img").fadeIn(1000);
 // });
-
-
-    
- //TO TOGGLE TO DARK
-//To toggle to dark with light button
-
-$("#chk").on("click",function myFunction(){
-    let element = document.body;
-    element.classList.toggle("dark-mode");
- });
-
-
-//Button animations//
- $(".sleepBox").on("click",function myFunction(){
-    let element = document.body;
-    element.classList.toggle("dark-mode");
- });
-
-
-//FUNCTION GAME OVER//
-
-function gameOver () {
-    $("#quit-game").css('display', 'flex');
-    $('#hatch').hide(); 
-    deathScreen();
-}
