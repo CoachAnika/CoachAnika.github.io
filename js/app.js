@@ -52,7 +52,7 @@ const boredTimer = function boredTimer () {
      
 
     };
-    timers.bored = setInterval (updateBoredTime, 2 * 1000);   
+    timers.bored = setInterval (updateBoredTime, 1 * 1000);   
 };
 
 // Hunger Timer 
@@ -71,7 +71,7 @@ const hungerTimer = function hungerTimer () {
      
 
     };
-    timers.hunger = setInterval (updateHungerTime, 3 * 1000);   
+    timers.hunger = setInterval (updateHungerTime, 2 * 1000);   
 };
 
 //Sleep Timer//
@@ -89,7 +89,7 @@ const sleepTimer = function sleepTimer () {
         }
      
     };
-    timers.sleep = setInterval (updateSleepTime, 4 * 1000);   
+    timers.sleep = setInterval (updateSleepTime, 3 * 1000);   
 };
 
 
@@ -102,18 +102,24 @@ const setTimer = function setTimer() {
         time++;
         firstPet.age++; 
         $("#ageTimer").text(`Age: ${time} Days`);
-        if (time >= 4) {
+        if (time >= 7) {
             console.log("first transformation image should show up. Time is now:", time);
             petTransformHatch();
             petTransform1();
-        if (time >= 8) {
+        if (time >= 13) {
             console.log("second transformation image should show up. Time is now:", time);
             petTransformStand();
             petTransform2();
+        if (time >= 20) {
+            console.log("You are winning the game. Time is now:", time);
+            gameWon();
+            
 
-        }   
+        };
+
+        };   
         
-        }
+        };
     };
     timers.age = setInterval (updateTime, 2 * 1000);
 };
@@ -159,11 +165,11 @@ const petTransform2 = function petTransform() {
 // Event Listener for reducing bored timer//
 $(".boredBox").on("click",function playerBored(){
     if (boredCount < 1) {
-        $(".boredBox").css("pointer-events:", "none;");
+        $(".boredBox").css("pointer-events:", "auto;");
     
     } else if (boredCount > 1) {
         boredCount--;
-    firstPet.boredLevel--;
+        firstPet.boredLevel--;
     $("#boredTimer").text(`Bored Level: ${firstPet.boredLevel}`)
         
     }
@@ -173,7 +179,7 @@ $(".boredBox").on("click",function playerBored(){
 
 $(".hungerBox").on("click",function playerHunger(){
     if (hungerCount < 1) {
-        $(".hungerBox").css("pointer-events:", "none;");
+        $(".hungerBox").css("pointer-events:", "auto;");
     
     } else if (hungerCount > 1) {
         hungerCount--;
@@ -187,7 +193,7 @@ $(".hungerBox").on("click",function playerHunger(){
 // Event Listener for reducing sleep timer//
 $(".sleepBox").on("click",function playerSleep(){
     if (sleepCount < 1) {
-        $(".sleepBox").css("pointer-events:", "none;");
+        $(".sleepBox").css("pointer-events:", "auto;");
     $("#sleepTimer").text(`Sleep Level: ${firstPet.sleepLevel}`)
 
     } else if (sleepCount > 1) {
@@ -213,7 +219,7 @@ class Player {
     /* Class Player for later operational use */
   };
 
-  //GAME END SCREEN. RESETS TIMERS//
+  //GAME END SCREENS. RESETS TIMERS//
     function deathScreen(){
     clearInterval(timers.bored);
     clearInterval(timers.hunger);
@@ -222,14 +228,23 @@ class Player {
    
   } 
 
-  //PROMPT ON GAME OVER//
+    //PROMPT ON LOOSING GAME OVER//
     function gameOver () {
     $("#quit-game").css('display', 'flex');
+    $('#egg').hide(); 
     $('#hatch').hide(); 
+    $('#stand').hide();
     deathScreen();
 }
+    //PROMPT ON WINNING GAME RESTART//
+    function gameWon () {
+    $("#win-game").css('display', 'flex');
+    $('#stand').hide(); 
+    deathScreen();
+    }
 
-  // HIDE PET IMAGES AT START AND SHOW As THEY TRANSFORM
+
+  // HIDE PET IMAGES AT START AND SHOW AS THEY TRANSFORM
     $('#egg').hide(); 
     $('#hatch').hide(); 
     $('#stand').hide(); 
@@ -263,6 +278,21 @@ $('#feed-Btn').on("click", function feedDance() {
     setTimeout(function () { $('#egg, #hatch, #stand').removeClass('flash'); }, 500);
 });
 
+//CODE FOR PREVENTING DOUBLE CLICKING, FOR LATER//
+// $('#feed-Btn').click(function(event) {
+//     if(!event.detail || event.detail == 1){ return true; }
+//     else { return false; }
+//   });
+
+//   $('#play-btn').click(function(event) {
+//     if(!event.detail || event.detail == 1){ return true; }
+//     else { return false; }
+//   });
+
+//   $('#sleep-btn').click(function(event) {
+//     if(!event.detail || event.detail == 1){ return true; }
+//     else { return false; }
+//   });
 
 //BUTTON ANIMATIONS//FUNCTIONS, CODE TO TRY OUT LATER//
 // Tried this but it would not toggle on click//
