@@ -61,7 +61,7 @@ header
 main
 {
   grid-area: main;
-  background-color: whitesmoke
+  background-color: white
   /* background-image: url(Images/farm-background.jpg); */
   
 }
