@@ -1,4 +1,10 @@
 # CoachAnika.github.io
+
+LINK TO PROJECT: https://coachanika.github.io/
+
+The project from start to finish took a week to complete. 
+The last few days of the project were spent, adding animations, sounds and better images.
+
 DAY 4: 
 At this point MVP is complete. Last night decided to take static images and make the character a little chicken, instead of animated Korean character Moolang. Have tried some animations to the chicken image character, but there was so much more I wanted to do with sights and sounds.
 
