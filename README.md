@@ -163,6 +163,22 @@ NICE-TO-HAVES:
 7)	Adding sound-effects.
 8)	Adding other hamster options to restart the game. 
 
+
+RESOURCES: 
+
+Bread and Butter CSS layout taken and re-worked from: 
+https://codepen.io/shammadahmed/pen/qVrprJ
+
+Light toggle switch tutorial followed from: 
+https://codepen.io/FlorinPop17/pen/XWWZYYG
+
+Progress Bar animation tutorial followed from: 
+https://www.youtube.com/watch?v=4LBRMSk6PLY
+
+Flash animation to hatched chicken implemented from:
+https://git.generalassemb.ly/tkolsrud/tamagotchi_project_0/
+
+
 -END-
 
 
