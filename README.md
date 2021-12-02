@@ -6,7 +6,7 @@ The project from start to finish took a week to complete.
 The last few days of the project were spent, adding animations, sounds and better images.
 
 DAY 4: 
-At this point MVP is complete. Last night decided to take static images and make the character a little chicken, instead of animated Korean character Moolang. Have tried some animations to the chicken image character, but there was so much more I wanted to do with sights and sounds.
+At this point MVP is complete. Decided to take static images and make the character a little chicken, instead of animated Korean character Moolang. Have tried some animations to the chicken image character, but there was so much more I wanted to do with sights and sounds.
 
 Next Steps:
 1. Add back-ground sound for play button.
@@ -166,7 +166,7 @@ NICE-TO-HAVES:
 
 RESOURCES: 
 
-Bread and Butter CSS layout taken and re-worked from: 
+Bread and Butter CSS layout re-worked from: 
 https://codepen.io/shammadahmed/pen/qVrprJ
 
 Light toggle switch tutorial followed from: 
